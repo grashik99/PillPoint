@@ -78,7 +78,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="w-full px-4 py-8 bg-black">
+    <div className="contain ">
       <Helmet>
         <title>PillPoint | Shop</title>
       </Helmet>
@@ -91,7 +91,7 @@ const Shop = () => {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="px-3 py-1 rounded bg-black border"
+          className="px-3 py-1 rounded  border bg-blue-500"
         >
           <option value="">Sort By</option>
           <option value="priceAsc">Price: Low to High</option>

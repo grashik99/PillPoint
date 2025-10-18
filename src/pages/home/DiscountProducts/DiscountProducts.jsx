@@ -13,9 +13,9 @@ export default function DiscountSlider() {
     (product) => product.discount && product.discount > 0
   );
 
-  return (<div className="bg-white py-4">
-    <div className="discount-slider-container md:w-11/12 mx-auto ">
-        <h1 className="text-center text-3xl font-bold text-black">Discout Products</h1>
+  return (<div className="contain">
+    <div className="discount-slider-container">
+        <h1 className="titles">Discout Products</h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}

@@ -9,7 +9,9 @@ const HomeLayout = () => {
       <Helmet>
         <title>PillPoint</title>
       </Helmet>
-      <Navbar />
+      <div className="sticky top-0 z-10">
+        <Navbar />
+      </div>
       <div className="min-h-[70vh]">
         <Outlet />
       </div>

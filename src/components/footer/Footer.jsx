@@ -3,7 +3,7 @@ import Logo from "../shared/logo";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+    <footer className="footer footer-horizontal  footer-center pt contain border-t">
       <nav className="flex justify-between w-full">
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

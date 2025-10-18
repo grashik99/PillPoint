@@ -34,9 +34,9 @@ export default function MedicineInquiry() {
     });
   };
 
-  return (<div className="border-t mt-2">
-    <div className="max-w-3xl mx-auto my-10 p-6  shadow-lg rounded-xl">
-      <h2 className="text-3xl font-bold mb-6 text-center text-green-700">
+  return (<div className="contain">
+    <div className="">
+      <h2 className="titles">
         Medicine Inquiry
       </h2>
 

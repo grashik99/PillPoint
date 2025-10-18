@@ -42,8 +42,8 @@ export default function DeliveryService() {
   };
 
   return (
-    <div className="w-11/12 mx-auto my-10 p-6 bg-base-200 shadow-lg rounded-xl">
-      <h2 className="text-3xl font-bold mb-6 text-center ">Delivery Service</h2>
+    <div className="contain">
+      <h2 className="titles">Delivery Service</h2>
 
       <form
         onSubmit={handleSubmit}

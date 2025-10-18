@@ -11,7 +11,7 @@ const Banner = () => {
   const { banners } = useAuthInfo();
 
   return (
-<div className="w-full py-8 bg-gray-100">
+<div className="contain pt">
   <Swiper
     slidesPerView={3}                 
     spaceBetween={30}

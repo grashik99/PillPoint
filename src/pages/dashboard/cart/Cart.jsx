@@ -76,7 +76,7 @@ const Cart = () => {
       <div className="overflow-x-auto">
         {!mergedCart?.length && (
           <Link to="/">
-            <div className="card card-compact bg-base-100 w-96 mx-auto shadow-xl">
+            <div className="card card-compact bg-base-100 w-96 mx-auto my-44 shadow-xl">
               <figure>
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2762/2762885.png"

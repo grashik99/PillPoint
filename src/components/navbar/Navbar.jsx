@@ -9,7 +9,7 @@ const Navbar = ({ dashboard }) => {
   const navigate = useNavigate();
   // console.log(userFromMongo);
   return (
-    <div className="navbar bg-base-200 shadow-sm md:px-10">
+    <div className="navbar bg-base-200 shadow-sm md:px-[6vw]">
       <div className="navbar-start">
         <div className={`dropdown ${dashboard && "hidden"}`}>
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,17 +37,15 @@ const Navbar = ({ dashboard }) => {
           </ul>
         </div>
         <p
-          className={`${
-            dashboard && "hidden"
-          } btn btn-ghost  border border-transparent  hover:bg-transparent transition-all duration-300 text-xl`}
+          className={`${dashboard && "hidden"
+            } btn btn-ghost  border border-transparent  hover:bg-transparent transition-all duration-300 text-xl`}
         >
           <Logo />
         </p>
         <label
           htmlFor="my-drawer-2"
-          className={`btn btn-ghost drawer-button lg:hidden ${
-            dashboard || "hidden"
-          }`}
+          className={`btn btn-ghost drawer-button lg:hidden ${dashboard || "hidden"
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

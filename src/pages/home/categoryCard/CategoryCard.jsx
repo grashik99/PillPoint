@@ -19,9 +19,9 @@ const cetegoryCard = () => {
   }, []);
 
   return (
-    <div className="w-11/12 mx-auto">
-      <h1 className="text-3xl md:text-5xl p-4 text-center">Categories</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 p-4">
+    <div className="contain">
+      <h1 className="titles">Categories</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 ">
         {Array.isArray(categories) && categories.map((cate) => (
           <CategorryCardCard key={cate._id} cate={cate} count={counts[cate.categoryName] || 0}></CategorryCardCard>
         ))}
