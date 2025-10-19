@@ -39,11 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "categoryMedicine/:categoryName",
-        element: (
-          <Private>
-            <CategoryMedicine />
-          </Private>
-        ),
+        element: <CategoryMedicine />
       },
       {
         path: "shop",
@@ -83,7 +79,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: "/",
-        element:  <Profile />,
+        element: <Profile />,
       },
       {
         path: "profile",

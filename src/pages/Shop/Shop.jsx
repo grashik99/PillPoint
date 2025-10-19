@@ -4,10 +4,12 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import ShopCard from "./ShopCard";
+import FormLoading from "../../components/shared/FormLoading";
 
-const Shop = () => {
-  const { medicines, user, refrash, setRefrash } = useAuthInfo();
-  
+const Shop = ({ fromHome }) => {
+  const { medicines, user, refrash, setRefrash, loading, setLoading } = useAuthInfo();
+
   const navigate = useNavigate();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +39,7 @@ const Shop = () => {
       return;
     }
 
+    setLoading(true)
     const cartQuantity = 1;
     const medicineId = medicine._id;
     const userEmail = user?.email;
@@ -63,9 +66,10 @@ const Shop = () => {
               timer: 1500,
             });
             setRefrash(refrash + 1);
+            setLoading(false)
           }
         })
-        // .catch((err) => console.log(err));
+      // .catch((err) => console.log(err));
     } else {
       Swal.fire({
         position: "top-end",
@@ -74,34 +78,44 @@ const Shop = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      setLoading(false)
     }
   };
 
+
   return (
-    <div className="contain ">
+
+    <div className="contain relative">
       <Helmet>
         <title>PillPoint | Shop</title>
       </Helmet>
-      <h1 className="text-2xl font-bold mb-6 text-center text-white">
+      <h1 className="titles">
         Shop Medicines
       </h1>
 
-      {/* Sort Dropdown */}
-      <div className="flex justify-end mb-4">
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="px-3 py-1 rounded  border bg-blue-500"
-        >
-          <option value="">Sort By</option>
-          <option value="priceAsc">Price: Low to High</option>
-          <option value="priceDesc">Price: High to Low</option>
-          <option value="discount">Discount: High to Low</option>
-          <option value="name">Name: A to Z</option>
-        </select>
-      </div>
+      {
+        loading && <FormLoading />
+      }
 
-      <div className="overflow-x-auto">
+      {/* Sort Dropdown */}
+      {
+        !fromHome &&
+
+        <div className="flex justify-end mb-4">
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="px-3 py-1 rounded  border bg-blue-500"
+          >
+            <option value="">Sort By</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="discount">Discount: High to Low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+      }
+      {/* <div className="overflow-x-auto">
         <table className="min-w-full border-collapse border">
           <thead>
             <tr className="bg-base-200">
@@ -141,7 +155,15 @@ const Shop = () => {
             ))}
           </tbody>
         </table>
+      </div> */}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {
+          currentMedicines?.map((item) => <ShopCard key={item._id} item={item} fromHome={fromHome} handleQuickAddToCart={handleQuickAddToCart}></ShopCard>)
+        }
       </div>
+
+
 
       {/* Pagination Controls */}
       <div className="flex justify-center items-center mt-6 gap-2">
@@ -157,11 +179,10 @@ const Shop = () => {
           <button
             key={num + 1}
             onClick={() => setCurrentPage(num + 1)}
-            className={`px-3 py-1 rounded ${
-              currentPage === num + 1
-                ? "bg-blue-500 text-white"
-                : "bg-base-200"
-            }`}
+            className={`px-3 py-1 rounded ${currentPage === num + 1
+              ? "bg-blue-500 text-white"
+              : "bg-base-200"
+              }`}
           >
             {num + 1}
           </button>

@@ -1,6 +1,6 @@
 const CompanyCard = ({com}) => {
   return (
-    <div className="card border shadow-sm hover:bg-pink-400 p-2">
+    <div className="card border shadow-sm bg-blue-300 hover:bg-pink-400 p-2">
       <figure className="relative">
         <img
           src={com.companyLogo}

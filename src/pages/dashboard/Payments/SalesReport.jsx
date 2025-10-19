@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useAuthInfo from "../../../hooks/useAuthInfo";
-import DataTable from "react-data-table-component"; // ✅ missing import added
+import DataTable from "react-data-table-component";
 
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
@@ -79,6 +79,33 @@ const SalesReport = () => {
     doc.save("sales_report.pdf");
   };
 
+
+  const customStyles = {
+    headCells: {
+      style: {
+        backgroundColor: "#1E293B", // header background
+        color: "#FFFFFF",            // header text color
+        fontSize: "14px",
+        fontWeight: "600",
+      },
+    },
+    rows: {
+      style: {
+        backgroundColor: "#F8FAFC", // row background
+        color: "#111827",           // row text color
+        "&:hover": {
+          backgroundColor: "#E2E8F0", // hover color
+        },
+      },
+    },
+    pagination: {
+      style: {
+        backgroundColor: "#FFFFFF",
+        color: "#1E293B",
+      },
+    },
+  };
+
   return (
     <div className="p-6">
       <Helmet>
@@ -118,6 +145,7 @@ const SalesReport = () => {
       <DataTable
         columns={columns}
         data={filteredSales}
+        customStyles={customStyles}
         pagination
         highlightOnHover
         striped

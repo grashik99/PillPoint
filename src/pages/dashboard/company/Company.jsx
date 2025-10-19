@@ -56,7 +56,7 @@ const Company = () => {
         </button>
       </div>
 
-      <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
         {company &&
           company.map((com) => (
             <CompanyCard key={com._id} com={com}></CompanyCard>

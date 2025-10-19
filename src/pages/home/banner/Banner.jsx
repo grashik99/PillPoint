@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -11,47 +10,43 @@ const Banner = () => {
   const { banners } = useAuthInfo();
 
   return (
-<div className="contain pt">
-  <Swiper
-    slidesPerView={3}                 
-    spaceBetween={30}
-    freeMode={true}                    
-    pagination={{ clickable: true }}   
-    modules={[FreeMode, Pagination, Autoplay]}
-    autoplay={{ delay: 2000, disableOnInteraction: false }}
-    loop={true}
-    className="mySwiper"
-  >
-    {banners
-      ?.filter((banner) => banner.approval)
-      .map((banner) => (
-        <SwiperSlide 
-          key={banner._id}
-          className="rounded-lg overflow-hidden shadow-lg bg-base-200"
-        >
-          <Link to="/shop" className="block w-full h-full">
-            <img
-              src={banner.imgUrl}
-              alt={banner.itemName}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-bold">{banner.itemName}</h2>
-              <p className="text-sm text-blue-400">{banner.company}</p>
-              <p className="text-md font-semibold mt-1">
-                Tk {banner.perUnitPrice}{" "}
-                {banner.discount && banner.discount !== "0" && (
-                  <span className="text-yellow-400 ml-2">
-                    ({banner.discount}% OFF)
-                  </span>
-                )}
-              </p>
-            </div>
-          </Link>
-        </SwiperSlide>
-      ))}
-  </Swiper>
-</div>
+    <div className="contain">
+      <Swiper
+        pagination={true}
+        modules={[Pagination, Autoplay]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        className="mySwiper"
+      >
+        {banners
+          ?.filter((banner) => banner.approval)
+          .map((banner) => (
+            <SwiperSlide
+              key={banner._id}
+              className="overflow-hidden"
+            >
+              <div className="block w-full h-full relative rounded-sm">
+                <img
+                  src={banner.imgUrl}
+                  alt={banner.itemName}
+                  className="w-full max-h-[80vh] object-cover rounded-sm"
+                />
+                <Link to={`/product/${banner._id}`} className="md:p-4 absolute bottom-0 md:bottom-10 bg-white/90 w-full shadow-2xl text-center ">
+                  <h2 className="text-lg font-bold">{banner.itemName}</h2>
+                  <p className="text-sm text-blue-400">{banner.company}</p>
+                  <p className="text-md font-semibold mt-1">
+                    Tk {banner.perUnitPrice}{" "}
+                    {banner.discount && banner.discount !== "0" && (
+                      <span className="text-yellow-400 ml-2">
+                        ({banner.discount}% OFF)
+                      </span>
+                    )}
+                  </p>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+      </Swiper>
+    </div>
 
   );
 };

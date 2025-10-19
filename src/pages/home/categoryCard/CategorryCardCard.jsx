@@ -13,17 +13,12 @@ const CategorryCardCard = ({ cate, count }) => {
           className="transform transition-transform duration-500 group-hover:scale-110"
         />
       </figure>
-      <div className="card-body bg-black/40 transition-colors duration-300 group-hover:bg-black/0">
+      <div className="card-body bg-black/0 transition-colors duration-300 group-hover:bg-black/0">
         <h2 className="card-title transition-colors duration-300 group-hover:text-yellow-300">
           {cate.categoryName}
         </h2>
-        <p className="text-sm font-extralight">
-          Quality medicines and health essentials you can trust — safe, effective, and caring solutions for your everyday wellness needs.
-        </p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary shadow">{count}</button>
+          <p>Quantity: {count}</p>
         </div>
-      </div>
     </Link>
   );
 };

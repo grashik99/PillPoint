@@ -65,12 +65,14 @@ const Login = () => {
             type="email"
             className="input"
             placeholder="Email"
+            defaultValue="admin@pillpoint.com"
           />
           {errors.email?.type === "required" && (
             <p className="text-warning">You do not provide an email address.</p>
           )}
           <div className="relative z-50">
-            <label className="label">Password</label>
+            <label className="label">Password</label><br />
+            <label className="label text-yellow-300">Admin2025</label>
             <input
               type={showPass ? "text" : "password"}
               placeholder="Password"

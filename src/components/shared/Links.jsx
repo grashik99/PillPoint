@@ -18,7 +18,7 @@ const Links = () => {
           <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
       )}
-      <li>
+      {/* <li>
         <details className="py-1 z-9999">
           <summary>
             <GrLanguage />
@@ -32,7 +32,7 @@ const Links = () => {
             </li>
           </ul>
         </details>
-      </li>
+      </li> */}
     </>
   );
 };

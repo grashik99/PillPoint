@@ -168,8 +168,9 @@ const Cart = () => {
               {/* Total Price */}
               <div className="flex justify-between items-center mt-6 text-lg font-semibold">
                 <span>Subtotal :</span>
-                <span className="text-base-200 italic">৳ {cartCost}/=</span>
+                <span className=" italic">৳ {cartCost}/=</span>
               </div>
+              <p>Card No: 4242 4242 4242 4242</p>
 
               {/* Stripe CheckoutForm */}
               <div className="card-actions mt-6">

@@ -7,7 +7,7 @@ const AuthLayout = () => {
   return (
     <div>
       <Navbar/>
-      <div className="hero bg-base-100 min-h-screen">
+      <div className="hero bg-base-100 min-h-screen contain">
         <div className="hero-content grid md:grid-cols-2 gap-10">
           <div className="text-center lg:text-left">
             <Lottie animationData={welcomeLottie}/>

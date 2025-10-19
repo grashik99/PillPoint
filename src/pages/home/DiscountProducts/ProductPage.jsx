@@ -3,10 +3,11 @@ import { useNavigate, useParams } from "react-router";
 import useAuthInfo from "../../../hooks/useAuthInfo";
 import axios from "axios";
 import Swal from "sweetalert2";
+import FormLoading from "../../../components/shared/FormLoading";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { user, refrash, setRefrash, medicines } = useAuthInfo();
+  const { user, refrash, setRefrash, medicines, loading, setLoading } = useAuthInfo();
   const product = medicines.find((med) => med._id === id);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const ProductPage = () => {
     if (!user) {
       navigate("/login");
     }
+    setLoading(true)
     e.preventDefault();
     const userEmail = user?.email;
     if (quantity <= product.quantity) {
@@ -42,13 +44,14 @@ const ProductPage = () => {
               showConfirmButton: false,
               timer: 1500,
             });
+            setLoading(false)
             navigate("/");
             setRefrash(refrash + 1);
             document.getElementById("my_modal_3").close();
             e.target.reset();
           }
         })
-        // .catch((err) => console.log(err));
+      // .catch((err) => console.log(err));
     } else {
       Swal.fire({
         position: "top-end",
@@ -57,6 +60,7 @@ const ProductPage = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      setLoading(false)
     }
   };
 
@@ -71,6 +75,11 @@ const ProductPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto my-10 p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
+
+      {
+        loading && <FormLoading />
+      }
+
       <div className="lg:flex lg:gap-8">
         {/* Product Image */}
         <div className="flex-shrink-0 mb-6 lg:mb-0 lg:w-1/2 flex justify-center items-center">
@@ -104,9 +113,8 @@ const ProductPage = () => {
           {/* Stock */}
           {product.stock !== undefined && (
             <p
-              className={`mb-4 font-medium ${
-                product.stock > 0 ? "text-green-700" : "text-red-600"
-              }`}
+              className={`mb-4 font-medium ${product.stock > 0 ? "text-green-700" : "text-red-600"
+                }`}
             >
               {product.stock > 0
                 ? `In Stock: ${product.stock}`
@@ -135,11 +143,10 @@ const ProductPage = () => {
           <button
             onClick={handleAddToCart}
             disabled={product.stock === 0}
-            className={`w-full py-2 rounded-lg font-semibold text-white transition-colors ${
-              product.stock === 0
+            className={`w-full py-2 rounded-lg font-semibold text-white transition-colors ${product.stock === 0
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-            }`}
+              }`}
           >
             {product.stock === 0 ? "Out of Stock" : "Add to Cart"}
           </button>

@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router";
 import useAuthInfo from "../../../hooks/useAuthInfo";
 
@@ -13,13 +13,15 @@ export default function DiscountSlider() {
     (product) => product.discount && product.discount > 0
   );
 
-  return (<div className="contain">
+  return (<div className="contain bg-base-200">
     <div className="discount-slider-container">
-        <h1 className="titles">Discout Products</h1>
+      <h1 className="titles">Discout Products</h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
         pagination={{ clickable: true }}
+        autoplay={{ delay: 1200, disableOnInteraction: false }}
+        modules={[Pagination, Autoplay]}
         loop={true}
         className="discount-swiper"
         breakpoints={{
@@ -29,13 +31,13 @@ export default function DiscountSlider() {
         }}
       >
         {discountedProducts.map((item) => {
-          const price = Number(item.perUnitPrice) || 0; // convert safely to number
+          const price = Number(item.perUnitPrice) || 0;
           const discountedPrice = price * (1 - (item.discount || 0) / 100);
 
           return (
             <SwiperSlide key={item._id}>
               <Link to={`/product/${item._id}`}>
-                <div className="card bg-base-200 my-2 w-96 shadow-sm">
+                <div className="card bg-base-200 my-2 shadow-sm">
                   <figure>
                     <img
                       src={item.imgUrl || "https://via.placeholder.com/200"}

@@ -68,7 +68,7 @@ const CategoryMedicine = () => {
   return (
     <>
       {categoryMedicines?.length >= 1 ? (
-        <div className="overflow-x-auto border border-base-content/5 w-auto">
+        <div className="overflow-x-auto contain">
           <table className="table">
             <thead>
               <tr>

@@ -14,9 +14,9 @@ a.active {
 
 .contain {
   @apply 
-  px-[6vw]
-  pb-6
-  md:pb-12
+  px-[8vw]
+  py-6
+  md:py-12
   mx-auto;
 }
 
