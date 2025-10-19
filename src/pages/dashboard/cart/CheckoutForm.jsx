@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import useAuthInfo from "../../../hooks/useAuthInfo";
 import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 export default function CheckoutForm() {
   const { user, cartCost, userCart, refrash, setRefrash } = useAuthInfo();
@@ -73,8 +74,16 @@ export default function CheckoutForm() {
           }
         });
 
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Payment Successful",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
       //   navigate(`/dashboard/invoice/${transactionId}`)
-      navigate(`/dashboard/invoice/${transactionId}`);
+      navigate(`/`);
     }
 
     setLoading(false);
