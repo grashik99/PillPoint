@@ -15,7 +15,7 @@ export default function DiscountSlider() {
 
   return (<div className="contain bg-base-200">
     <div className="discount-slider-container">
-      <h1 className="titles">Discout Products</h1>
+      <h1 className="titles">Discount Products</h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -37,7 +37,7 @@ export default function DiscountSlider() {
           return (
             <SwiperSlide key={item._id}>
               <Link to={`/product/${item._id}`}>
-                <div className="card bg-base-200 my-2 shadow-sm">
+                <div className="card bg-base-200 my-2 shadow-sm border">
                   <figure>
                     <img
                       src={item.imgUrl || "https://via.placeholder.com/200"}

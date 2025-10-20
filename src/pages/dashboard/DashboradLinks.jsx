@@ -23,6 +23,9 @@ const DashboradLinks = () => {
           <NavLink to="/dashboard/users" className="w-full btn justify-start">
             Users
           </NavLink>
+          <NavLink to="/dashboard/overview" className="w-full btn justify-start">
+            Overview
+          </NavLink>
           <NavLink
             to="/dashboard/manageCategory"
             className="w-full btn justify-start"
@@ -68,6 +71,9 @@ const DashboradLinks = () => {
           </NavLink>
           <NavLink to="/dashboard/company" className="w-full btn justify-start">
             Company
+          </NavLink>
+          <NavLink to="/dashboard/overview" className="w-full btn justify-start">
+            Overview
           </NavLink>
           <NavLink to="/dashboard/revenue" className="w-full btn justify-start">
             Revenue

@@ -137,11 +137,11 @@ export default function Locations() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {filtered.map((loc) => (
-          <div key={loc.id} className="bg-white rounded-2xl shadow p-4 hover:bg-amber-200/10">
+          <div key={loc.id} className=" rounded-2xl border shadow p-4">
             <h3 className="text-lg font-medium">{loc.name}</h3>
-            <p className="text-sm text-gray-600">{loc.city} — {loc.address}</p>
+            <p className="text-sm ">{loc.city} — {loc.address}</p>
 
-            <div className="mt-3 text-sm text-gray-700">
+            <div className="mt-3 text-sm ">
               <div>Phone: <a href={`tel:${loc.phone}`} className="underline">{loc.phone}</a></div>
               <div>Hours: {loc.hours}</div>
             </div>
@@ -151,7 +151,7 @@ export default function Locations() {
                 target="_blank"
                 rel="noreferrer"
                 href={`https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`}
-                className="btn btn-sm px-3 py-1 rounded-md border"
+                className="btn bg-blue-400 btn-sm px-3 py-1 rounded-md border"
               >
                 View on Map
               </a>

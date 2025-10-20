@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 const Payments = () => {
   const { orders, refrash, setRefrash } = useAuthInfo();
   const queryClient = useQueryClient();
+  console.log(orders)
 
   // console.log(orders)
   const toggleOrderMutation = useMutation({

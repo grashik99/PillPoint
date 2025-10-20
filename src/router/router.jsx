@@ -25,6 +25,7 @@ import BannerAproval from "../pages/dashboard/BannerAproval/BannerAproval";
 import ProductPage from "../pages/home/DiscountProducts/ProductPage";
 import PaymentHistory from "../pages/dashboard/PaymentHistory/PaymentHistory";
 import Locations from "../components/locations/Locations";
+import SalesChart from "../pages/dashboard/salesChart/SalesChart";
 
 
 
@@ -85,6 +86,10 @@ export const router = createBrowserRouter([
       {
         index: "/",
         element: <Profile />,
+      },
+      {
+        path: "overview",
+        element: <SalesChart/>
       },
       {
         path: "profile",

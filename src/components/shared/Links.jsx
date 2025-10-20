@@ -14,7 +14,7 @@ const Links = () => {
         <NavLink to="/shop">Shop</NavLink>
       </li>
       <li>
-        <NavLink to="/branch">Branch</NavLink>
+        <NavLink to="/branch">Branches</NavLink>
       </li>
       {user && (<>
         <li>

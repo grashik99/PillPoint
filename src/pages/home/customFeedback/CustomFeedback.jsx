@@ -82,7 +82,7 @@ const feedbacks = [
 
 const CustomFeedback = () => {
   return (
-    <section className=" bg-gray-50 contain">
+    <section className=" contain">
       <h2 className="titles">Customer Feedback</h2>
 
       <Swiper
