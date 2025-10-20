@@ -13,10 +13,16 @@ const Links = () => {
       <li>
         <NavLink to="/shop">Shop</NavLink>
       </li>
-      {user && (
+      <li>
+        <NavLink to="/branch">Branch</NavLink>
+      </li>
+      {user && (<>
         <li>
           <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
+        <li>
+          <NavLink to="/dashboard/profile">Profile</NavLink>
+        </li></>
       )}
       {/* <li>
         <details className="py-1 z-9999">

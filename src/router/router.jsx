@@ -24,6 +24,7 @@ import Revenue from "../pages/dashboard/seller/Revenue";
 import BannerAproval from "../pages/dashboard/BannerAproval/BannerAproval";
 import ProductPage from "../pages/home/DiscountProducts/ProductPage";
 import PaymentHistory from "../pages/dashboard/PaymentHistory/PaymentHistory";
+import Locations from "../components/locations/Locations";
 
 
 
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: "shop",
         Component: Shop,
+      },
+      {
+        path: "branch",
+        Component: Locations
       },
       {
         path: "/product/:id",
