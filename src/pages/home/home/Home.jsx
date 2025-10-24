@@ -17,7 +17,7 @@ const Home = () => {
       <CategoryCard />
       <DiscountProducts />
       <CustomFeedback />
-      <div className="md:flex">
+      <div className="md:flex max-w-[1920px] mx-auto">
         <DeliveryService />
         <MedicineInquiry />
       </div>

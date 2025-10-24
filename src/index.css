@@ -17,6 +17,7 @@ a.active {
   px-[8vw]
   py-6
   md:py-12
+  max-w-[1920px]
   mx-auto;
 }
 

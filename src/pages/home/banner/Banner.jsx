@@ -10,7 +10,7 @@ const Banner = () => {
   const { banners } = useAuthInfo();
 
   return (
-    <div className="contain">
+    <div className="contain mim-h-[20vh] md:min-h-[70vh]">
       <Swiper
         pagination={true}
         modules={[Pagination, Autoplay]}
