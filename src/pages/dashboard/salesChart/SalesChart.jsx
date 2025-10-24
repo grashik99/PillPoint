@@ -59,7 +59,7 @@ export default function SalesChart() {
 
 
     return (
-        <div className="w-full mt-10 md:mt-20 max-w-5xl mx-auto bg-gradient-to-br from-indigo-50 to-blue-100 shadow-lg rounded-2xl p-6">
+        <div className="w-full mt-10 md:mt-20 max-w-5xl mx-auto shadow-lg rounded-2xl p-6">
             <h2 className="text-2xl font-bold mb-6 text-center text-indigo-700">
                 💊 PillPoint Sales Overview
             </h2>
@@ -116,7 +116,7 @@ export default function SalesChart() {
                 </BarChart>
             </ResponsiveContainer>
 
-            <p className="text-sm text-gray-600 mt-4 text-center italic">
+            <p className="text-sm  mt-4 text-center italic">
                 Data based on recent confirmed transactions
             </p>
         </div>
