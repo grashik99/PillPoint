@@ -26,6 +26,7 @@ import ProductPage from "../pages/home/DiscountProducts/ProductPage";
 import PaymentHistory from "../pages/dashboard/PaymentHistory/PaymentHistory";
 import Locations from "../components/locations/Locations";
 import SalesChart from "../pages/dashboard/salesChart/SalesChart";
+import DoctorAppointment from "../components/doctorAppointment/DoctorAppointment";
 
 
 
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductPage />,
+      },
+      {
+        path: "/doctors",
+        element: <DoctorAppointment/>,
       },
     ],
   },
