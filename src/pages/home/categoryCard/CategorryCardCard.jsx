@@ -4,7 +4,7 @@ const CategorryCardCard = ({ cate, count }) => {
   return (
     <Link
       to={`/categoryMedicine/${cate.categoryName}`}
-      className="card bg-base-100 image-full shadow-sm group overflow-hidden"
+      className="card bg-base-100 image-full shadow-lg group overflow-hidden shadow-blue-400"
     >
       <figure className="overflow-hidden">
         <img

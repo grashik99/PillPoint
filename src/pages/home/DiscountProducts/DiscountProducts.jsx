@@ -17,9 +17,9 @@ export default function DiscountSlider() {
     <div className="discount-slider-container">
       <h1 className="titles">Discount Products</h1>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{ clickable: true }}
+        slidesPerView={4}
+        spaceBetween={25}
+        // pagination={{ clickable: true }}
         autoplay={{ delay: 1200, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
         loop={true}
@@ -37,7 +37,7 @@ export default function DiscountSlider() {
           return (
             <SwiperSlide key={item._id}>
               <Link to={`/product/${item._id}`}>
-                <div className="card bg-base-200 my-2 shadow-sm border">
+                <div className="card bg-base-200 my-2 shadow-2xl">
                   <figure>
                     <img
                       src={item.imgUrl || "https://via.placeholder.com/200"}

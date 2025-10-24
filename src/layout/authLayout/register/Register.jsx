@@ -188,6 +188,10 @@ const Register = () => {
               </Link>
             </p>
           </div>
+          <div className="border p-1 rounded-sm">
+            <p className="italic text-blue-500">Login Email: admin@pillpoint.com</p>
+            <p className="italic text-blue-500">Login password: Admin2025</p>
+          </div>
 
           <button className="btn btn-neutral mt-4">Register</button>
         </form>
