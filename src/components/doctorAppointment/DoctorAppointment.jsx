@@ -355,7 +355,7 @@ export default function DoctorAppointment() {
       {/* Booking Modal */}
       {showModal && selectedDoctor && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="bg-white rounded-lg w-full max-w-xl p-5">
+          <div className="bg-primary rounded-lg w-full max-w-xl p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold">Book Appointment — {selectedDoctor.name}</h3>
               <button className="text-gray-600" onClick={() => setShowModal(false)}>Close</button>
