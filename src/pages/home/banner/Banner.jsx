@@ -31,9 +31,10 @@ const Banner = () => {
                   className="w-full max-h-[80vh] object-cover rounded-sm"
                 />
                 <Link to={`/product/${banner._id}`} className="md:p-4 absolute bottom-0 md:bottom-10 bg-white/90 w-full shadow-2xl text-center ">
-                  <h2 className="text-lg font-bold">{banner.itemName}</h2>
+                  <h2 className="text-lg font-bold text-black">{banner.itemName}</h2>
                   <p className="text-sm text-blue-400">{banner.company}</p>
-                  <p className="text-md font-semibold mt-1">
+                  <p className="text-md font-semibold mt-1 text-black
+                  ">
                     Tk {banner.perUnitPrice}{" "}
                     {banner.discount && banner.discount !== "0" && (
                       <span className="text-yellow-400 ml-2">

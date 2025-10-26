@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import CategoryMedicineCard from "./CategoryMedicineCard";
 import useAuthInfo from "../../hooks/useAuthInfo";
 import Swal from "sweetalert2";
@@ -11,8 +11,14 @@ const CategoryMedicine = () => {
   const [categoryMedicines, setCategoryMedicines] = useState([]);
   const [selectedMedicine, setSelectedMedicine] = useState(null);
   const [cartMedicine, setCartMedicine] = useState(null);
+  const navigate = useNavigate()
 
   const handleAddToCart = (e) => {
+
+    if (!user){
+      navigate("/login")
+    }
+
     e.preventDefault();
     const cartQuantity = parseInt(e.target.quantity.value);
     const medicineId = cartMedicine._id;
